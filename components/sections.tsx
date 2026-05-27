@@ -90,16 +90,14 @@ export function HeroSection() {
           className="flex justify-center md:justify-end"
           variants={fadeInUp}
         >
-          <div className="relative">
-            <div className="w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden border-[6px] border-white/90 shadow-2xl">
-              <Image
-                src="/portfolio/profile.jpg"
-                alt="Portrait of Warusha Shamalka, Computer Science student"
-                fill
-                className="object-cover object-top"
-                priority
-              />
-            </div>
+          <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-[6px] border-white/90 shadow-2xl">
+            <Image
+              src="/portfolio/profile.jpg"
+              alt="Portrait of Warusha Shamalka, Computer Science student"
+              fill
+              className="object-cover object-top rounded-full"
+              priority
+            />
           </div>
         </motion.div>
       </motion.div>
