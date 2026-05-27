@@ -5,6 +5,10 @@ import Image from "next/image"
 import Link from "next/link"
 import { Github, Linkedin, ArrowDown, ExternalLink, Mail } from "lucide-react"
 
+const profileImageSrc = process.env.NEXT_PUBLIC_BASE_PATH
+  ? `${process.env.NEXT_PUBLIC_BASE_PATH}/profile.jpg`
+  : "/profile.jpg"
+
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
@@ -92,8 +96,8 @@ export function HeroSection() {
         >
           <div className="relative">
             <div className="w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-2xl overflow-hidden border-[6px] border-white/90 shadow-2xl">
-              <Image 
-                src="/profile.jpg"
+              <Image
+                src={profileImageSrc}
                 alt="Portrait of Warusha Shamalka, Computer Science student"
                 fill
                 className="object-cover object-top"

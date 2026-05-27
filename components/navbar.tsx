@@ -39,7 +39,7 @@ export function Navbar() {
           href="#hero" 
           className="text-lg font-bold text-foreground hover:text-primary transition-colors"
         >
-          Warusha Shamalka.
+          Warusha Shamalka
         </Link>
 
         {/* Desktop Navigation */}
