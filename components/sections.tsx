@@ -92,7 +92,7 @@ export function HeroSection() {
         >
           <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-[6px] border-white/90 shadow-2xl">
             <Image
-              src="/profile.jpg"
+              src="/portfolio/profile.jpg"
               alt="Portrait of Warusha Shamalka, Computer Science student"
               fill
               className="object-cover object-top rounded-full"
