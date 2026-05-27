@@ -21,9 +21,9 @@ const staggerContainer = {
 
 export function HeroSection() {
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center px-6 py-20 relative">
+    <section id="hero" className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-16 md:py-20 relative">
       <motion.div 
-        className="max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center"
+        className="max-w-6xl w-full grid gap-10 items-center md:grid-cols-2 md:gap-12"
         initial="initial"
         animate="animate"
         variants={staggerContainer}
@@ -49,10 +49,10 @@ export function HeroSection() {
             Passionate about full-stack development, system architecture, and delivering production-ready solutions.
           </motion.p>
           
-          <motion.div className="flex flex-wrap gap-4" variants={fadeInUp}>
+          <motion.div className="flex flex-col sm:flex-row flex-wrap gap-4" variants={fadeInUp}>
             <Link 
               href="#projects"
-              className="px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all duration-300 hover:-translate-y-0.5"
+              className="w-full sm:w-auto px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all duration-300 hover:-translate-y-0.5 text-center"
             >
               View Projects
             </Link>
@@ -68,7 +68,7 @@ export function HeroSection() {
           </motion.div>
 
           <motion.div 
-            className="flex gap-8 pt-6"
+            className="flex flex-col sm:flex-row sm:flex-wrap gap-6 pt-6"
             variants={fadeInUp}
           >
             <div>
@@ -92,7 +92,7 @@ export function HeroSection() {
         >
           <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-[6px] border-white/90 shadow-2xl">
             <Image
-              src="/portfolio/profile.jpg"
+              src="/profile.jpg"
               alt="Portrait of Warusha Shamalka, Computer Science student"
               fill
               className="object-cover object-top rounded-full"
@@ -118,7 +118,7 @@ export function HeroSection() {
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-24 px-6">
+    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8">
       <motion.div 
         className="max-w-4xl mx-auto"
         initial={{ opacity: 0, y: 40 }}
@@ -178,7 +178,7 @@ export function SkillsSection() {
   ]
 
   return (
-    <section id="skills" className="py-24 px-6 bg-secondary/30">
+    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -233,7 +233,7 @@ export function ProjectsSection() {
   ]
 
   return (
-    <section id="projects" className="py-24 px-6">
+    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -249,7 +249,7 @@ export function ProjectsSection() {
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
-              className={`bg-card/50 backdrop-blur-sm rounded-2xl p-8 border border-border/50 ${project.featured ? 'ring-1 ring-primary/30' : ''}`}
+              className={`bg-card/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-border/50 ${project.featured ? 'ring-1 ring-primary/30' : ''}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
@@ -282,7 +282,7 @@ export function ProjectsSection() {
                 </div>
               </div>
 
-              <div className="flex gap-4">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href={project.github}
                   target="_blank"
@@ -314,7 +314,7 @@ export function ProjectsSection() {
 
 export function GitHubSection() {
   return (
-    <section id="github" className="py-24 px-6 bg-secondary/30">
+    <section id="github" className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -325,7 +325,7 @@ export function GitHubSection() {
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">GitHub Activity</h2>
           <p className="text-muted-foreground mb-8">Check out my repositories and contributions</p>
           
-          <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-8 border border-border/50">
+          <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-border/50">
             <div className="flex flex-col items-center gap-6">
               <div className="w-20 h-20 rounded-full bg-secondary flex items-center justify-center border border-primary/30">
                 <Github className="w-10 h-10 text-primary" />
@@ -355,7 +355,7 @@ export function GitHubSection() {
 
 export function ContactSection() {
   return (
-    <section id="contact" className="py-24 px-6">
+    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -368,7 +368,7 @@ export function ContactSection() {
             {"I'm"} always open to discussing new opportunities, collaborations, or just having a conversation about technology.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
             <Link
               href="https://github.com/Warusha-Shamalka"
               target="_blank"

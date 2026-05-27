@@ -34,7 +34,7 @@ export function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <nav className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
         <Link 
           href="#hero" 
           className="text-lg font-bold text-foreground hover:text-primary transition-colors"
