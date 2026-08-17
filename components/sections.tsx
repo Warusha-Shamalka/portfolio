@@ -152,31 +152,31 @@ export function AboutSection() {
 export function SkillsSection() {
   const skillCategories = [
     {
-      title: "Frontend",
-      skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Shadcn/UI", "Framer Motion", "Tiptap", "Recharts"]
+      title: "DevOps & Tools",
+      skills: ["Git", "GitHub", "Docker", "GitHub Actions", "Bash"]
     },
     {
-      title: "Backend & Data",
-      skills: ["Node.js", "Express", "Socket.io", "PHP (MVC)", "Python", "Flask", "MongoDB", "MySQL", "PostgreSQL", "Sanity CMS"]
+      title: "Systems & OS",
+      skills: ["Linux (Ubuntu)", "Command Line Tools", "Networking"]
     },
     {
-      title: "AI & Real-Time",
-      skills: ["Transformers.js", "Web Workers", "WebSockets", "MQTT", "RabbitMQ"]
+      title: "Databases",
+      skills: ["PostgreSQL", "MySQL", "SQL"]
     },
     {
-      title: "Security & Encryption",
-      skills: ["Web Crypto API", "RSA-OAEP", "AES-GCM", "JWT RS256", "RBAC", "bcrypt"]
+      title: "Programming",
+      skills: ["Python", "C++", "C", "PHP"]
     },
     {
-      title: "Cloud & DevOps",
-      skills: ["Docker", "Google Cloud Run", "Cloud Build", "Secret Manager", "GitHub Actions", "Vercel", "Linux"]
+      title: "DevOps Concepts",
+      skills: ["CI/CD", "Microservices", "REST APIs", "Version Control", "Agile"]
     },
     {
-      title: "Architecture & Tooling",
-      skills: ["pnpm Monorepos", "REST", "SOAP", "TCP", "GROQ", "Git", "CI/CD Pipelines"]
+      title: "CS Fundamentals",
+      skills: ["OOP", "Data Structures & Algorithms"]
     }
   ]
-
+  
   return (
     <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">
       <div className="max-w-6xl mx-auto">
@@ -225,7 +225,7 @@ export function ProjectsSection() {
       title: "UniVerse",
       description: "A comprehensive university management system built as a 2nd year group project. UniVerse streamlines academic operations by providing an integrated platform for student information management, course scheduling, and administrative tasks.",
       problem: "Managing university operations across multiple disconnected systems leads to inefficiency and data inconsistency.",
-      techStack: ["React", "Node.js", "MongoDB", "Express", "JWT Authentication"],
+      techStack: ["PHP", "MySQL", "HTML", "CSS", "JavaScript", "MVC Architecture"],
       github: "https://github.com/wcs2023/UniVerse",
       demo: "https://uni-verse-beige.vercel.app/",
       featured: true
