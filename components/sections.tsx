@@ -388,7 +388,7 @@ export function ContactSection() {
               <span className="text-foreground font-medium">LinkedIn</span>
             </Link>
             <Link
-              href="mailto:contact@warushashamalka.dev"
+              href="mailto:wshamalka1@gmail.com"
               className="flex items-center gap-3 px-6 py-4 bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl hover:bg-secondary hover:border-primary/30 transition-all duration-300 hover:-translate-y-0.5"
             >
               <Mail className="w-6 h-6 text-primary" />

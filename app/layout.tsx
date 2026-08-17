@@ -22,6 +22,10 @@ export const metadata: Metadata = {
     description: 'Computer Science undergraduate and Full-Stack & Cloud-Native Developer at University of Colombo School of Computing.',
     type: 'website',
   },
+  icons: {
+    icon: '/icon.svg',
+    apple: '/apple-icon.png',
+  },
 }
 
 export const viewport = {
