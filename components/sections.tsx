@@ -39,14 +39,14 @@ export function HeroSection() {
             className="text-lg md:text-xl text-muted-foreground"
             variants={fadeInUp}
           >
-            Computer Science Undergraduate | <span className="text-primary">Full-Stack & Cloud-Native Developer</span>
+            Computer Science Undergraduate | <span className="text-primary">DevOps-Focused Engineer</span>
           </motion.h2>
           <motion.p 
             className="text-muted-foreground leading-relaxed max-w-lg"
             variants={fadeInUp}
           >
-            Building scalable, cloud-native applications with modern web technologies. 
-            Passionate about full-stack development, system architecture, and delivering production-ready solutions.
+            Building and containerizing distributed systems with Docker and CI/CD pipelines. 
+            Interested in cloud infrastructure, automation, and building reliable, production-ready systems.
           </motion.p>
           
           <motion.div className="flex flex-col sm:flex-row flex-wrap gap-4" variants={fadeInUp}>
@@ -66,7 +66,6 @@ export function HeroSection() {
               GitHub
             </Link>
           </motion.div>
-
           <motion.div 
             className="flex flex-col sm:flex-row sm:flex-wrap gap-6 pt-6"
             variants={fadeInUp}
@@ -85,7 +84,6 @@ export function HeroSection() {
             </div>
           </motion.div>
         </motion.div>
-
         <motion.div 
           className="flex justify-center md:justify-end"
           variants={fadeInUp}
@@ -101,7 +99,6 @@ export function HeroSection() {
           </div>
         </motion.div>
       </motion.div>
-
       <motion.div 
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
         initial={{ opacity: 0, y: -10 }}
@@ -129,25 +126,26 @@ export function AboutSection() {
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">About Me</h2>
         <div className="space-y-6 text-muted-foreground leading-relaxed">
           <p>
-            {"I'm"} a third-year Computer Science undergraduate at the University of Colombo School of Computing, 
-            pursuing a BSc (Hons) in Computer Science. My academic journey combines strong theoretical 
-            foundations with practical, hands-on development experience.
+            {"I'm"} a third-year Computer Science undergraduate at the University of Colombo School of 
+            Computing, pursuing a BSc (Hons) in Computer Science, seeking a DevOps internship.
           </p>
           <p>
-            As a Full-Stack and Cloud-Native Developer, I specialize in building scalable web applications 
-            using modern technologies like React, Next.js, Node.js, and cloud platforms. I have experience 
-            with real-time systems, security implementations, and DevOps practices.
+            I have hands-on experience with Linux, Git, Docker, GitHub Actions, Bash, and Python — 
+            containerizing and running distributed services locally, and working with relational 
+            databases in Linux-based development environments. My project work includes a 6-service 
+            distributed microservices architecture with Docker Compose, and an MVC career-networking 
+            platform built in PHP and MySQL with a 25+ table relational schema.
           </p>
           <p>
-            I believe in writing clean, maintainable code and following best practices in software architecture. 
-            Whether {"it's"} designing RESTful APIs, implementing WebSocket connections, or deploying containerized 
-            applications, I approach every project with a focus on quality and scalability.
+            {"I'm"} interested in cloud infrastructure, CI/CD, automation, and building reliable systems 
+            — and looking to grow these fundamentals in a professional DevOps environment.
           </p>
         </div>
       </motion.div>
     </section>
   )
 }
+
 
 export function SkillsSection() {
   const skillCategories = [
@@ -222,16 +220,24 @@ export function SkillsSection() {
 export function ProjectsSection() {
   const projects = [
     {
+      title: "Capstone Project — Distributed Microservices Architecture",
+      description: "A distributed microservices application built with Python and FastAPI, coordinating a service registry, core business-logic services (including route optimization), and legacy-system adapters. Orchestrated via Docker Compose across 12 containers.",
+      problem: "Coordinating startup order across interdependent services — database, message broker, service registry, and legacy systems — to prevent race conditions during container startup.",
+      techStack: ["Python", "FastAPI", "Docker", "RabbitMQ", "PostgreSQL"],
+      github: "https://github.com/NanocomStudios/Capstone_Project",
+      demo: null,
+      featured: true
+    },
+    {
       title: "UniVerse",
-      description: "A comprehensive university management system built as a 2nd year group project. UniVerse streamlines academic operations by providing an integrated platform for student information management, course scheduling, and administrative tasks.",
-      problem: "Managing university operations across multiple disconnected systems leads to inefficiency and data inconsistency.",
+      description: "A career-networking platform connecting school leavers, undergraduates, alumni, and companies, built as a four-member group project with an MVC architecture in PHP and MySQL. Features include Z-score-based degree recommendations, a job/internship portal with application tracking, mentorship requests, discussion forums, and club event management, on a normalized 25+ table relational schema.",
+      problem: "Students and alumni lack a single platform to explore degree paths, connect with mentors, discover job and internship opportunities, and engage with academic clubs — currently spread across disconnected channels.",
       techStack: ["PHP", "MySQL", "HTML", "CSS", "JavaScript", "MVC Architecture"],
       github: "https://github.com/wcs2023/UniVerse",
-      demo: "https://uni-verse-beige.vercel.app/",
+      demo: null,
       featured: true
     }
   ]
-
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
@@ -244,7 +250,6 @@ export function ProjectsSection() {
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Featured Projects</h2>
           <p className="text-muted-foreground mb-12">Selected projects and system architectures</p>
         </motion.div>
-
         <div className="space-y-8">
           {projects.map((project, index) => (
             <motion.div
@@ -262,17 +267,16 @@ export function ProjectsSection() {
               )}
               <h3 className="text-2xl font-bold text-foreground mb-4">{project.title}</h3>
               <p className="text-muted-foreground mb-4 leading-relaxed">{project.description}</p>
-              
+
               <div className="mb-6">
                 <h4 className="text-sm font-medium text-foreground mb-2">Problem it solves:</h4>
                 <p className="text-muted-foreground text-sm">{project.problem}</p>
               </div>
-
               <div className="mb-6">
                 <h4 className="text-sm font-medium text-foreground mb-2">Tech Stack:</h4>
                 <div className="flex flex-wrap gap-2">
                   {project.techStack.map((tech) => (
-                    <span 
+                    <span
                       key={tech}
                       className="px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-md"
                     >
@@ -281,7 +285,6 @@ export function ProjectsSection() {
                   ))}
                 </div>
               </div>
-
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href={project.github}
