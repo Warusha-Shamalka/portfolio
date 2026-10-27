@@ -46,8 +46,8 @@ export function HeroSection() {
             variants={fadeInUp}
           >
             Developing hands-on experience in Linux, Docker, CI/CD, and automation through
-            distributed-systems projects. Seeking a DevOps internship to grow into a reliable
-            infrastructure and platform engineer.
+            distributed-systems projects. Seeking a DevOps internship to grow into a capable
+            DevOps engineer.
           </motion.p>
           
           <motion.div className="flex flex-col sm:flex-row flex-wrap gap-4" variants={fadeInUp}>
@@ -92,7 +92,7 @@ export function HeroSection() {
           <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-[6px] border-white/90 shadow-2xl">
             <Image
               src="/portfolio/profile.jpg"
-              alt="Portrait of Warusha Shamalka, Computer Science student"
+              alt="Portrait of Warusha Shamalka, third-year Computer Science undergraduate"
               fill
               className="object-cover object-top rounded-full"
               priority
@@ -134,9 +134,10 @@ export function AboutSection() {
           <p>
             I have hands-on experience with Linux, Docker, Git, GitHub Actions, Bash, and CI/CD
             fundamentals. For a distributed-systems project, I containerised a PostgreSQL-backed delivery
-            service within a three-service system running 12 containers, configuring Docker Compose
+            service within a three-service system running as 12 containers, configuring Docker Compose
             dependencies and health checks for PostgreSQL, RabbitMQ, and the service registry. I have
-            also configured CMake builds and Snapcraft packaging for a C11/GTK 3 desktop application.
+            also configured CMake builds and added a Snapcraft configuration for a C11/GTK 3 desktop
+            application.
           </p>
           <p>
             I am particularly interested in cloud infrastructure, automation, and reliable systems. As
@@ -236,14 +237,13 @@ export function ProjectsSection() {
       highlights: [
         "Developed FastAPI endpoints for driver assignment, delivery-status tracking, and proof-of-delivery feedback, persisting records in PostgreSQL with SQLAlchemy and requiring a reason for failed-delivery feedback.",
         "Integrated the delivery service with a legacy route-optimization system over HTTP to request routes for assigned deliveries.",
-        "Containerised the delivery service with Docker Compose as part of a three-service system running 12 containers, with startup gated on PostgreSQL, RabbitMQ, and service-registry health checks."
+        "Containerised the delivery service with Docker Compose as part of a three-service system running as 12 containers, with startup gated on PostgreSQL, RabbitMQ, and service-registry health checks."
       ],
       year: "2025",
       team: "6-member team",
       techStack: ["Python", "FastAPI", "Docker", "RabbitMQ", "PostgreSQL", "SQLAlchemy"],
       github: "https://github.com/NanocomStudios/Capstone_Project",
       demo: null,
-      featured: true
     },
     {
       title: "UniVerse",
@@ -258,7 +258,6 @@ export function ProjectsSection() {
       techStack: ["PHP", "MySQL", "JavaScript", "HTML5", "CSS3", "Custom MVC"],
       github: "https://github.com/wcs2023/UniVerse",
       demo: null,
-      featured: true
     },
     {
       title: "UPaste — Linux Clipboard History Manager",
@@ -272,7 +271,6 @@ export function ProjectsSection() {
       techStack: ["C11", "GTK 3", "SQLite", "CMake"],
       github: "https://github.com/Warusha-Shamalka/UPaste",
       demo: null,
-      featured: true
     },
     {
       title: "Mini Language Lexer, Parser & Interpreter",
@@ -286,7 +284,6 @@ export function ProjectsSection() {
       techStack: ["C", "Recursive-descent Parsing", "Direct Interpretation"],
       github: null,
       demo: null,
-      featured: true
     },
     {
       title: "Lumen Home — Smart Home Monitoring & Control System",
@@ -300,7 +297,6 @@ export function ProjectsSection() {
       techStack: ["Kotlin", "Android", "Firebase"],
       github: "https://github.com/vinujawakishta/smart-home-system",
       demo: null,
-      featured: true
     },
     {
       title: "Q-Learning Path-Following EV3 Robot",
@@ -314,7 +310,6 @@ export function ProjectsSection() {
       techStack: ["Python", "Q-Learning", "LEGO EV3"],
       github: "https://github.com/Chamudu/Q-Learning-Robot",
       demo: null,
-      featured: true
     }
   ]
   return (
@@ -326,24 +321,19 @@ export function ProjectsSection() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Featured Projects</h2>
-          <p className="text-muted-foreground mb-12">Selected projects and system architectures</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Selected Projects</h2>
+          <p className="text-muted-foreground mb-12">Academic and personal projects that demonstrate my technical work</p>
         </motion.div>
         <div className="space-y-8">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
-              className={`bg-card/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-border/50 ${project.featured ? 'ring-1 ring-primary/30' : ''}`}
+              className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-border/50 hover:border-primary/30 transition-colors"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              {project.featured && (
-                <span className="text-xs uppercase tracking-wider text-primary mb-4 block">
-                  Featured Project
-                </span>
-              )}
               <h3 className="text-2xl font-bold text-foreground mb-4">{project.title}</h3>
               {(project.year || project.team) && (
                 <p className="text-sm text-muted-foreground -mt-2 mb-4">
@@ -379,6 +369,7 @@ export function ProjectsSection() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`View code for ${project.title}`}
                     className="flex items-center gap-2 px-4 py-2 bg-secondary text-secondary-foreground rounded-lg hover:bg-primary/20 hover:text-primary transition-colors"
                   >
                     <Github className="w-4 h-4" />
@@ -390,6 +381,7 @@ export function ProjectsSection() {
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`View live demo for ${project.title}`}
                     className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
                   >
                     <ExternalLink className="w-4 h-4" />
@@ -415,8 +407,8 @@ export function GitHubSection() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">GitHub Activity</h2>
-          <p className="text-muted-foreground mb-8">Check out my repositories and contributions</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">GitHub</h2>
+          <p className="text-muted-foreground mb-8">Explore my repositories and contributions</p>
           
           <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-border/50">
             <div className="flex flex-col items-center gap-6">
@@ -458,7 +450,7 @@ export function ContactSection() {
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Get In Touch</h2>
           <p className="text-muted-foreground mb-12 max-w-lg mx-auto">
-            {"I'm"} always open to discussing new opportunities, collaborations, or just having a conversation about technology.
+            {"I'm"} open to DevOps internship opportunities, technical collaborations, and conversations about infrastructure and automation.
           </p>
 
           <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
