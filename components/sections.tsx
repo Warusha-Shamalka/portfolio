@@ -21,28 +21,34 @@ const staggerContainer = {
 
 export function HeroSection() {
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-16 md:py-20 relative">
+    <section id="hero" className="relative isolate flex min-h-screen items-center justify-center overflow-hidden px-4 py-28 sm:px-6 md:py-32">
+      <div aria-hidden="true" className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute left-[8%] top-[18%] h-56 w-56 rounded-full bg-primary/15 blur-3xl sm:h-72 sm:w-72" />
+        <div className="absolute bottom-[8%] right-[4%] h-64 w-64 rounded-full border border-primary/15 sm:h-96 sm:w-96" />
+        <div className="absolute bottom-[12%] right-[8%] h-40 w-40 rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent" />
+      </div>
       <motion.div 
-        className="max-w-6xl w-full grid gap-10 items-center md:grid-cols-2 md:gap-12"
+        className="relative z-10 grid w-full max-w-6xl items-center gap-12 md:grid-cols-2 md:gap-16"
         initial="initial"
         animate="animate"
         variants={staggerContainer}
       >
-        <motion.div className="space-y-6" variants={fadeInUp}>
+        <motion.div className="space-y-7" variants={fadeInUp}>
           <motion.h1 
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground"
+            className="bg-gradient-to-r from-foreground via-foreground to-primary bg-clip-text text-5xl font-bold tracking-tight text-transparent md:text-6xl lg:text-7xl"
             variants={fadeInUp}
           >
             Warusha Shamalka
           </motion.h1>
           <motion.h2 
-            className="text-lg md:text-xl text-muted-foreground"
+            className="flex w-fit flex-wrap items-center gap-x-2 gap-y-1 rounded-full border border-primary/20 bg-primary/5 px-3 py-1.5 text-sm text-muted-foreground shadow-[0_0_30px_rgba(34,211,238,0.05)] md:text-base"
             variants={fadeInUp}
           >
             Third-Year Computer Science Undergraduate | <span className="text-primary">Aspiring DevOps Engineer</span>
           </motion.h2>
           <motion.p 
-            className="text-muted-foreground leading-relaxed max-w-lg"
+            className="max-w-xl text-base leading-7 text-muted-foreground md:text-lg"
             variants={fadeInUp}
           >
             Developing hands-on experience in Linux, Docker, CI/CD, and automation through
@@ -50,64 +56,68 @@ export function HeroSection() {
             DevOps engineer.
           </motion.p>
           
-          <motion.div className="flex flex-col sm:flex-row flex-wrap gap-4" variants={fadeInUp}>
+          <motion.div className="flex flex-col flex-wrap gap-3 sm:flex-row" variants={fadeInUp}>
             <Link 
               href="#projects"
-              className="w-full sm:w-auto px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all duration-300 hover:-translate-y-0.5 text-center"
+              className="group w-full rounded-xl bg-primary px-6 py-3.5 text-center font-semibold text-primary-foreground shadow-[0_10px_30px_rgba(34,211,238,0.22)] transition-all duration-300 hover:-translate-y-1 hover:bg-primary/90 hover:shadow-[0_15px_36px_rgba(34,211,238,0.3)] sm:w-auto"
             >
-              View Projects
+              <span className="inline-flex items-center gap-2">View Projects <span className="transition-transform duration-300 group-hover:translate-x-1">→</span></span>
             </Link>
             <Link 
               href="https://github.com/Warusha-Shamalka"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 border border-border text-foreground rounded-lg font-medium hover:bg-secondary hover:border-primary/50 transition-all duration-300 hover:-translate-y-0.5 flex items-center gap-2"
+              className="flex items-center justify-center gap-2 rounded-xl border border-border bg-card/40 px-6 py-3.5 font-medium text-foreground transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-secondary sm:justify-start"
             >
               <Github className="w-5 h-5" />
               GitHub
             </Link>
           </motion.div>
           <motion.div 
-            className="flex flex-col sm:flex-row sm:flex-wrap gap-6 pt-6"
+            className="grid max-w-xl grid-cols-3 gap-3 pt-3 sm:gap-4"
             variants={fadeInUp}
           >
-            <div>
-              <h4 className="text-2xl font-bold text-primary">3.76</h4>
-              <p className="text-sm text-muted-foreground uppercase tracking-wide">GPA / 4.0</p>
+            <div className="rounded-2xl border border-border/70 bg-card/50 p-3 backdrop-blur-sm transition-colors hover:border-primary/30 sm:p-4">
+              <h4 className="text-xl font-bold text-primary sm:text-2xl">3.76</h4>
+              <p className="mt-1 text-[10px] uppercase tracking-[0.14em] text-muted-foreground sm:text-xs">GPA / 4.0</p>
             </div>
-            <div>
-              <h4 className="text-2xl font-bold text-foreground">BSc (Hons)</h4>
-              <p className="text-sm text-muted-foreground uppercase tracking-wide">Computer Science</p>
+            <div className="rounded-2xl border border-border/70 bg-card/50 p-3 backdrop-blur-sm transition-colors hover:border-primary/30 sm:p-4">
+              <h4 className="text-lg font-bold text-foreground sm:text-xl">BSc (Hons)</h4>
+              <p className="mt-1 text-[10px] uppercase tracking-[0.14em] text-muted-foreground sm:text-xs">Computer Science</p>
             </div>
-            <div>
-              <h4 className="text-2xl font-bold text-foreground">3rd Year</h4>
-              <p className="text-sm text-muted-foreground uppercase tracking-wide">Undergraduate</p>
+            <div className="rounded-2xl border border-border/70 bg-card/50 p-3 backdrop-blur-sm transition-colors hover:border-primary/30 sm:p-4">
+              <h4 className="text-lg font-bold text-foreground sm:text-xl">3rd Year</h4>
+              <p className="mt-1 text-[10px] uppercase tracking-[0.14em] text-muted-foreground sm:text-xs">Undergraduate</p>
             </div>
           </motion.div>
         </motion.div>
         <motion.div 
-          className="flex justify-center md:justify-end"
+          className="relative flex justify-center md:justify-end"
           variants={fadeInUp}
         >
-          <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-[6px] border-white/90 shadow-2xl">
+          <div aria-hidden="true" className="absolute h-64 w-64 rounded-full border border-primary/25 sm:h-80 sm:w-80 lg:h-96 lg:w-96" />
+          <div aria-hidden="true" className="absolute h-52 w-52 rounded-full bg-primary/20 blur-3xl sm:h-64 sm:w-64" />
+          <div className="relative w-56 rounded-[2rem] border border-primary/30 bg-gradient-to-br from-primary/60 via-card to-primary/10 p-2 shadow-[0_24px_60px_rgba(0,0,0,0.42)] sm:w-64 md:w-72 lg:w-80">
+            <div className="relative aspect-square overflow-hidden rounded-[1.6rem] bg-card">
             <Image
               src="/portfolio/profile.jpg"
               alt="Portrait of Warusha Shamalka, third-year Computer Science undergraduate"
               fill
-              className="object-cover object-top rounded-full"
+              className="object-cover object-top transition-transform duration-700 hover:scale-105"
               priority
             />
+            </div>
           </div>
         </motion.div>
       </motion.div>
       <motion.div 
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-7 left-1/2 -translate-x-1/2"
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.5 }}
       >
-        <Link href="#about" className="text-muted-foreground hover:text-primary transition-colors">
-          <ArrowDown className="w-6 h-6 animate-bounce" />
+        <Link href="#about" className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card/70 text-muted-foreground transition-colors hover:border-primary/50 hover:text-primary">
+          <ArrowDown className="h-5 w-5 animate-bounce" />
         </Link>
       </motion.div>
     </section>
@@ -116,16 +126,21 @@ export function HeroSection() {
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8">
+    <section id="about" className="relative px-4 py-20 sm:px-6 lg:px-8">
       <motion.div 
-        className="max-w-4xl mx-auto"
+        className="mx-auto max-w-4xl"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">About Me</h2>
-        <div className="space-y-6 text-muted-foreground leading-relaxed">
+        <div className="rounded-3xl border border-border/70 bg-card/40 p-6 shadow-[0_16px_50px_rgba(0,0,0,0.18)] backdrop-blur-sm sm:p-8 md:p-10">
+          <div className="mb-8 flex items-center gap-3">
+            <span className="h-px w-10 bg-primary" />
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Profile</span>
+          </div>
+        <h2 className="mb-8 text-3xl font-bold tracking-tight text-foreground md:text-4xl">About Me</h2>
+        <div className="max-w-3xl space-y-6 text-base leading-7 text-muted-foreground md:text-lg">
           <p>
             {"I'm"} a third-year Computer Science undergraduate at the University of Colombo School of
             Computing, pursuing a BSc (Hons) in Computer Science with a 3.76 GPA. I am building toward
@@ -144,6 +159,7 @@ export function AboutSection() {
             an undergraduate, I am eager to learn from production environments while contributing
             thoughtfully to a DevOps team.
           </p>
+        </div>
         </div>
       </motion.div>
     </section>
@@ -188,34 +204,43 @@ export function SkillsSection() {
   ]
   
   return (
-    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">
-      <div className="max-w-6xl mx-auto">
+    <section id="skills" className="relative overflow-hidden bg-secondary/30 px-4 py-20 sm:px-6 lg:px-8">
+      <div aria-hidden="true" className="absolute -left-36 top-16 h-72 w-72 rounded-full bg-primary/8 blur-3xl" />
+      <div className="relative mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Technical Skills</h2>
-          <p className="text-muted-foreground mb-12">Technologies and tools I work with</p>
+          <div className="mb-4 flex items-center gap-3">
+            <span className="h-px w-10 bg-primary" />
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Toolkit</span>
+          </div>
+          <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">Technical Skills</h2>
+          <p className="mb-12 text-muted-foreground">Technologies and tools I work with</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.title}
-              className="bg-card/50 backdrop-blur-sm rounded-xl p-6 border border-border/50 hover:border-primary/30 transition-colors"
+              className="group relative overflow-hidden rounded-2xl border border-border/60 bg-card/55 p-6 shadow-[0_10px_30px_rgba(0,0,0,0.12)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_16px_40px_rgba(0,0,0,0.24)]"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
             >
-              <h3 className="text-lg font-semibold text-foreground mb-4">{category.title}</h3>
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <div className="mb-5 flex items-center justify-between gap-3">
+                <h3 className="text-lg font-semibold text-foreground">{category.title}</h3>
+                <span className="rounded-full border border-primary/20 bg-primary/5 px-2 py-1 text-xs font-medium text-primary">{category.skills.length}</span>
+              </div>
               <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill) => (
                   <span 
                     key={skill}
-                    className="px-3 py-1.5 bg-secondary text-secondary-foreground text-sm rounded-lg hover:bg-primary/20 hover:text-primary transition-colors"
+                    className="rounded-lg border border-transparent bg-secondary px-3 py-1.5 text-sm text-secondary-foreground transition-colors hover:border-primary/20 hover:bg-primary/10 hover:text-primary"
                   >
                     {skill}
                   </span>
@@ -313,64 +338,72 @@ export function ProjectsSection() {
     }
   ]
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
+    <section id="projects" className="px-4 py-20 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Selected Projects</h2>
-          <p className="text-muted-foreground mb-12">Academic and personal projects that demonstrate my technical work</p>
+          <div className="mb-4 flex items-center gap-3">
+            <span className="h-px w-10 bg-primary" />
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Selected work</span>
+          </div>
+          <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">Selected Projects</h2>
+          <p className="mb-12 text-muted-foreground">Academic and personal projects that demonstrate my technical work</p>
         </motion.div>
-        <div className="space-y-8">
+        <div className="space-y-6">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
-              className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-border/50 hover:border-primary/30 transition-colors"
+              className="group relative overflow-hidden rounded-3xl border border-border/60 bg-card/50 p-6 shadow-[0_12px_35px_rgba(0,0,0,0.14)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 hover:shadow-[0_20px_48px_rgba(0,0,0,0.25)] sm:p-8"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <h3 className="text-2xl font-bold text-foreground mb-4">{project.title}</h3>
+              <div className="absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-primary via-primary/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              <div className="mb-4 flex items-start justify-between gap-4">
+                <h3 className="text-2xl font-bold tracking-tight text-foreground">{project.title}</h3>
+                <span className="shrink-0 font-mono text-xs text-primary/70">0{index + 1}</span>
+              </div>
               {(project.year || project.team) && (
-                <p className="text-sm text-muted-foreground -mt-2 mb-4">
+                <p className="mb-5 flex flex-wrap gap-x-2 text-sm text-muted-foreground">
                   {[project.year, project.team].filter(Boolean).join(" · ")}
                 </p>
               )}
-              <p className="text-muted-foreground mb-4 leading-relaxed">{project.description}</p>
+              <p className="mb-5 max-w-4xl leading-relaxed text-muted-foreground">{project.description}</p>
 
-              <div className="mb-6">
-                <h4 className="text-sm font-medium text-foreground mb-2">Highlights:</h4>
-                <ul className="list-disc space-y-2 pl-5 text-sm text-muted-foreground">
+              <div className="mb-6 rounded-2xl border border-border/50 bg-background/30 p-4 sm:p-5">
+                <h4 className="mb-3 text-sm font-semibold text-foreground">Highlights</h4>
+                <ul className="list-disc space-y-2 pl-5 text-sm leading-6 text-muted-foreground">
                   {project.highlights.map((highlight) => (
                     <li key={highlight}>{highlight}</li>
                   ))}
                 </ul>
               </div>
               <div className="mb-6">
-                <h4 className="text-sm font-medium text-foreground mb-2">Tech Stack:</h4>
+                <h4 className="mb-3 text-sm font-semibold text-foreground">Tech Stack</h4>
                 <div className="flex flex-wrap gap-2">
                   {project.techStack.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-secondary text-secondary-foreground text-sm rounded-md"
+                      className="rounded-lg border border-border/60 bg-secondary px-3 py-1.5 text-sm text-secondary-foreground"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
               </div>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col gap-3 sm:flex-row">
                 {project.github && (
                   <Link
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`View code for ${project.title}`}
-                    className="flex items-center gap-2 px-4 py-2 bg-secondary text-secondary-foreground rounded-lg hover:bg-primary/20 hover:text-primary transition-colors"
+                    className="flex items-center justify-center gap-2 rounded-xl border border-border bg-secondary px-4 py-2.5 text-secondary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:bg-primary/10 hover:text-primary sm:justify-start"
                   >
                     <Github className="w-4 h-4" />
                     View Code
@@ -382,7 +415,7 @@ export function ProjectsSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`View live demo for ${project.title}`}
-                    className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
+                    className="flex items-center justify-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-primary-foreground transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary/90 sm:justify-start"
                   >
                     <ExternalLink className="w-4 h-4" />
                     Live Demo
@@ -399,21 +432,27 @@ export function ProjectsSection() {
 
 export function GitHubSection() {
   return (
-    <section id="github" className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">
-      <div className="max-w-4xl mx-auto text-center">
+    <section id="github" className="relative overflow-hidden bg-secondary/30 px-4 py-20 sm:px-6 lg:px-8">
+      <div aria-hidden="true" className="absolute right-0 top-0 h-80 w-80 rounded-full bg-primary/8 blur-3xl" />
+      <div className="relative mx-auto max-w-4xl text-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">GitHub</h2>
-          <p className="text-muted-foreground mb-8">Explore my repositories and contributions</p>
+          <div className="mb-4 flex items-center justify-center gap-3">
+            <span className="h-px w-10 bg-primary" />
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Code</span>
+            <span className="h-px w-10 bg-primary" />
+          </div>
+          <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">GitHub</h2>
+          <p className="mb-8 text-muted-foreground">Explore my repositories and contributions</p>
           
-          <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-border/50">
+          <div className="rounded-3xl border border-primary/20 bg-card/60 p-6 shadow-[0_20px_48px_rgba(0,0,0,0.22)] backdrop-blur-sm sm:p-10">
             <div className="flex flex-col items-center gap-6">
-              <div className="w-20 h-20 rounded-full bg-secondary flex items-center justify-center border border-primary/30">
-                <Github className="w-10 h-10 text-primary" />
+              <div className="flex h-20 w-20 items-center justify-center rounded-2xl border border-primary/30 bg-primary/10 shadow-[0_0_34px_rgba(34,211,238,0.12)]">
+                <Github className="h-10 w-10 text-primary" />
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-foreground mb-2">@Warusha-Shamalka</h3>
@@ -425,7 +464,7 @@ export function GitHubSection() {
                 href="https://github.com/Warusha-Shamalka"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all duration-300 hover:-translate-y-0.5 flex items-center gap-2"
+                className="flex items-center gap-2 rounded-xl bg-primary px-6 py-3.5 font-semibold text-primary-foreground shadow-[0_10px_30px_rgba(34,211,238,0.22)] transition-all duration-300 hover:-translate-y-1 hover:bg-primary/90"
               >
                 <Github className="w-5 h-5" />
                 Visit GitHub Profile
@@ -440,43 +479,48 @@ export function GitHubSection() {
 
 export function ContactSection() {
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto text-center">
+    <section id="contact" className="px-4 py-20 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-4xl text-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Get In Touch</h2>
-          <p className="text-muted-foreground mb-12 max-w-lg mx-auto">
+          <div className="mb-4 flex items-center justify-center gap-3">
+            <span className="h-px w-10 bg-primary" />
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Connect</span>
+            <span className="h-px w-10 bg-primary" />
+          </div>
+          <h2 className="mb-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">Get In Touch</h2>
+          <p className="mx-auto mb-10 max-w-lg text-muted-foreground">
             {"I'm"} open to DevOps internship opportunities, technical collaborations, and conversations about infrastructure and automation.
           </p>
 
-          <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4">
+          <div className="flex flex-col flex-wrap justify-center gap-4 sm:flex-row">
             <Link
               href="https://github.com/Warusha-Shamalka"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 px-6 py-4 bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl hover:bg-secondary hover:border-primary/30 transition-all duration-300 hover:-translate-y-0.5"
+              className="group flex items-center gap-3 rounded-2xl border border-border/60 bg-card/50 px-6 py-4 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-secondary"
             >
-              <Github className="w-6 h-6 text-primary" />
+              <Github className="h-6 w-6 text-primary transition-transform duration-300 group-hover:scale-110" />
               <span className="text-foreground font-medium">GitHub</span>
             </Link>
             <Link
               href="https://www.linkedin.com/in/warusha-shamalka-3b04a71aa/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 px-6 py-4 bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl hover:bg-secondary hover:border-primary/30 transition-all duration-300 hover:-translate-y-0.5"
+              className="group flex items-center gap-3 rounded-2xl border border-border/60 bg-card/50 px-6 py-4 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-secondary"
             >
-              <Linkedin className="w-6 h-6 text-primary" />
+              <Linkedin className="h-6 w-6 text-primary transition-transform duration-300 group-hover:scale-110" />
               <span className="text-foreground font-medium">LinkedIn</span>
             </Link>
             <Link
               href="mailto:wshamalka1@gmail.com"
-              className="flex items-center gap-3 px-6 py-4 bg-card/50 backdrop-blur-sm border border-border/50 rounded-xl hover:bg-secondary hover:border-primary/30 transition-all duration-300 hover:-translate-y-0.5"
+              className="group flex items-center gap-3 rounded-2xl border border-border/60 bg-card/50 px-6 py-4 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-secondary"
             >
-              <Mail className="w-6 h-6 text-primary" />
+              <Mail className="h-6 w-6 text-primary transition-transform duration-300 group-hover:scale-110" />
               <span className="text-foreground font-medium">Email</span>
             </Link>
           </div>

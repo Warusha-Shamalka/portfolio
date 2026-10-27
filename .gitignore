@@ -1,1 +1,7 @@
 node_modules
+
+# Next.js generated build output and development cache
+/.next/
+
+# TypeScript incremental compilation cache
+*.tsbuildinfo

@@ -15,9 +15,9 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
+        <AboutSection />
         <SkillsSection />
         <ProjectsSection />
-        <AboutSection />
         <GitHubSection />
         <ContactSection />
       </main>
