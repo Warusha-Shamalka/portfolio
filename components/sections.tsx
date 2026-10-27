@@ -39,14 +39,15 @@ export function HeroSection() {
             className="text-lg md:text-xl text-muted-foreground"
             variants={fadeInUp}
           >
-            Computer Science Undergraduate | <span className="text-primary">DevOps-Focused Engineer</span>
+            Third-Year Computer Science Undergraduate | <span className="text-primary">Aspiring DevOps Engineer</span>
           </motion.h2>
           <motion.p 
             className="text-muted-foreground leading-relaxed max-w-lg"
             variants={fadeInUp}
           >
-            Building and containerizing distributed systems with Docker and CI/CD pipelines. 
-            Interested in cloud infrastructure, automation, and building reliable, production-ready systems.
+            Developing hands-on experience in Linux, Docker, CI/CD, and automation through
+            distributed-systems projects. Seeking a DevOps internship to grow into a reliable
+            infrastructure and platform engineer.
           </motion.p>
           
           <motion.div className="flex flex-col sm:flex-row flex-wrap gap-4" variants={fadeInUp}>
@@ -126,19 +127,21 @@ export function AboutSection() {
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">About Me</h2>
         <div className="space-y-6 text-muted-foreground leading-relaxed">
           <p>
-            {"I'm"} a third-year Computer Science undergraduate at the University of Colombo School of 
-            Computing, pursuing a BSc (Hons) in Computer Science, seeking a DevOps internship.
+            {"I'm"} a third-year Computer Science undergraduate at the University of Colombo School of
+            Computing, pursuing a BSc (Hons) in Computer Science with a 3.76 GPA. I am building toward
+            a career in DevOps and seeking an internship where I can strengthen my practical skills.
           </p>
           <p>
-            I have hands-on experience with Linux, Git, Docker, GitHub Actions, Bash, and Python — 
-            containerizing and running distributed services locally, and working with relational 
-            databases in Linux-based development environments. My project work includes a 6-service 
-            distributed microservices architecture with Docker Compose, and an MVC career-networking 
-            platform built in PHP and MySQL with a 25+ table relational schema.
+            I have hands-on experience with Linux, Docker, Git, GitHub Actions, Bash, and CI/CD
+            fundamentals. For a distributed-systems project, I containerised a PostgreSQL-backed delivery
+            service within a three-service system running 12 containers, configuring Docker Compose
+            dependencies and health checks for PostgreSQL, RabbitMQ, and the service registry. I have
+            also configured CMake builds and Snapcraft packaging for a C11/GTK 3 desktop application.
           </p>
           <p>
-            {"I'm"} interested in cloud infrastructure, CI/CD, automation, and building reliable systems 
-            — and looking to grow these fundamentals in a professional DevOps environment.
+            I am particularly interested in cloud infrastructure, automation, and reliable systems. As
+            an undergraduate, I am eager to learn from production environments while contributing
+            thoughtfully to a DevOps team.
           </p>
         </div>
       </motion.div>
@@ -150,28 +153,36 @@ export function AboutSection() {
 export function SkillsSection() {
   const skillCategories = [
     {
-      title: "DevOps & Tools",
-      skills: ["Git", "GitHub", "Docker", "GitHub Actions", "Bash"]
+      title: "Languages",
+      skills: ["Python", "C++", "C", "Go", "PHP", "Kotlin", "JavaScript"]
     },
     {
-      title: "Systems & OS",
-      skills: ["Linux (Ubuntu)", "Command Line Tools", "Networking"]
+      title: "Backend & APIs",
+      skills: ["FastAPI", "REST APIs"]
+    },
+    {
+      title: "Mobile & Platforms",
+      skills: ["Android SDK", "Firebase"]
     },
     {
       title: "Databases",
-      skills: ["PostgreSQL", "MySQL", "SQL"]
+      skills: ["PostgreSQL", "MySQL", "SQLite", "Relational Database Design"]
     },
     {
-      title: "Programming",
-      skills: ["Python", "C++", "C", "PHP"]
+      title: "Software Engineering",
+      skills: ["Object-Oriented Programming (OOP)", "Data Structures & Algorithms", "MVC", "Design Patterns", "Agile"]
     },
     {
-      title: "DevOps Concepts",
-      skills: ["CI/CD", "Microservices", "REST APIs", "Version Control", "Agile"]
+      title: "Distributed Systems",
+      skills: ["Microservices", "Event-Driven Architecture", "Message Queues"]
     },
     {
-      title: "CS Fundamentals",
-      skills: ["OOP", "Data Structures & Algorithms"]
+      title: "DevOps & Tools",
+      skills: ["Git", "GitHub", "Docker", "Docker Compose", "GitHub Actions", "CI/CD", "Bash"]
+    },
+    {
+      title: "Systems",
+      skills: ["Linux (Ubuntu)", "Networking"]
     }
   ]
   
@@ -221,19 +232,87 @@ export function ProjectsSection() {
   const projects = [
     {
       title: "Capstone Project — Distributed Microservices Architecture",
-      description: "A distributed microservices application built with Python and FastAPI, coordinating a service registry, core business-logic services (including route optimization), and legacy-system adapters. Orchestrated via Docker Compose across 12 containers.",
-      problem: "Coordinating startup order across interdependent services — database, message broker, service registry, and legacy systems — to prevent race conditions during container startup.",
-      techStack: ["Python", "FastAPI", "Docker", "RabbitMQ", "PostgreSQL"],
+      description: "A delivery-service component of a distributed microservices system, built as a six-member team project.",
+      highlights: [
+        "Developed FastAPI endpoints for driver assignment, delivery-status tracking, and proof-of-delivery feedback, persisting records in PostgreSQL with SQLAlchemy and requiring a reason for failed-delivery feedback.",
+        "Integrated the delivery service with a legacy route-optimization system over HTTP to request routes for assigned deliveries.",
+        "Containerised the delivery service with Docker Compose as part of a three-service system running 12 containers, with startup gated on PostgreSQL, RabbitMQ, and service-registry health checks."
+      ],
+      year: "2025",
+      team: "6-member team",
+      techStack: ["Python", "FastAPI", "Docker", "RabbitMQ", "PostgreSQL", "SQLAlchemy"],
       github: "https://github.com/NanocomStudios/Capstone_Project",
       demo: null,
       featured: true
     },
     {
       title: "UniVerse",
-      description: "A career-networking platform connecting school leavers, undergraduates, alumni, and companies, built as a four-member group project with an MVC architecture in PHP and MySQL. Features include Z-score-based degree recommendations, a job/internship portal with application tracking, mentorship requests, discussion forums, and club event management, on a normalized 25+ table relational schema.",
-      problem: "Students and alumni lack a single platform to explore degree paths, connect with mentors, discover job and internship opportunities, and engage with academic clubs — currently spread across disconnected channels.",
-      techStack: ["PHP", "MySQL", "HTML", "CSS", "JavaScript", "MVC Architecture"],
+      description: "A five-role career-networking platform built by a four-member team using a custom PHP MVC architecture.",
+      highlights: [
+        "Led the team and designed the platform's normalized 18-table MySQL schema.",
+        "Implemented session-based login with PHP password_verify(), server-side validation, and account-status checks, routing authenticated users to role-specific dashboards.",
+        "Built alumni article management with author-only ownership checks, admin title search and category filters using parameterized SQL, and dashboard charts for users, jobs, mentorship bookings, and forum threads."
+      ],
+      year: "2026",
+      team: "4-member team",
+      techStack: ["PHP", "MySQL", "JavaScript", "HTML5", "CSS3", "Custom MVC"],
       github: "https://github.com/wcs2023/UniVerse",
+      demo: null,
+      featured: true
+    },
+    {
+      title: "UPaste — Linux Clipboard History Manager",
+      description: "A GTK 3 desktop application for searching and managing local clipboard history.",
+      highlights: [
+        "Built searchable clipboard history with copy/delete actions and pause/resume monitoring controls.",
+        "Implemented local SQLite persistence with parameterized inserts and deletes, using a database trigger to retain the latest 500 text entries."
+      ],
+      year: "2025",
+      team: null,
+      techStack: ["C11", "GTK 3", "SQLite", "CMake"],
+      github: "https://github.com/Warusha-Shamalka/UPaste",
+      demo: null,
+      featured: true
+    },
+    {
+      title: "Mini Language Lexer, Parser & Interpreter",
+      description: "A C implementation of a mini-language lexer, recursive-descent parser, and direct interpreter.",
+      highlights: [
+        "Rejects undeclared variables and duplicate declarations.",
+        "Uses distinct exit codes for lexical, syntax, and semantic errors."
+      ],
+      year: "2025",
+      team: null,
+      techStack: ["C", "Recursive-descent Parsing", "Direct Interpretation"],
+      github: null,
+      demo: null,
+      featured: true
+    },
+    {
+      title: "Lumen Home — Smart Home Monitoring & Control System",
+      description: "An Android smart-home control system built with a three-member team.",
+      highlights: [
+        "Implemented two-way Firebase Realtime Database synchronization between the Android app and web simulator, keeping device states updated without manual refresh.",
+        "Built a control-screen timer that switches the simulated smart iron off at its configured duration limit and records a Firebase alert."
+      ],
+      year: "2025",
+      team: "3-member team",
+      techStack: ["Kotlin", "Android", "Firebase"],
+      github: "https://github.com/vinujawakishta/smart-home-system",
+      demo: null,
+      featured: true
+    },
+    {
+      title: "Q-Learning Path-Following EV3 Robot",
+      description: "A Python Q-learning controller for path following with a LEGO EV3 robot.",
+      highlights: [
+        "Implemented epsilon-greedy action selection using direction and colour-sensor states to explore motor actions for EV3 path following.",
+        "Added status logging to the EV3 controller to trace line-search and recovery behaviour during path-following trials."
+      ],
+      year: "2026",
+      team: null,
+      techStack: ["Python", "Q-Learning", "LEGO EV3"],
+      github: "https://github.com/Chamudu/Q-Learning-Robot",
       demo: null,
       featured: true
     }
@@ -262,15 +341,24 @@ export function ProjectsSection() {
             >
               {project.featured && (
                 <span className="text-xs uppercase tracking-wider text-primary mb-4 block">
-                  Featured Project - Group Project
+                  Featured Project
                 </span>
               )}
               <h3 className="text-2xl font-bold text-foreground mb-4">{project.title}</h3>
+              {(project.year || project.team) && (
+                <p className="text-sm text-muted-foreground -mt-2 mb-4">
+                  {[project.year, project.team].filter(Boolean).join(" · ")}
+                </p>
+              )}
               <p className="text-muted-foreground mb-4 leading-relaxed">{project.description}</p>
 
               <div className="mb-6">
-                <h4 className="text-sm font-medium text-foreground mb-2">Problem it solves:</h4>
-                <p className="text-muted-foreground text-sm">{project.problem}</p>
+                <h4 className="text-sm font-medium text-foreground mb-2">Highlights:</h4>
+                <ul className="list-disc space-y-2 pl-5 text-sm text-muted-foreground">
+                  {project.highlights.map((highlight) => (
+                    <li key={highlight}>{highlight}</li>
+                  ))}
+                </ul>
               </div>
               <div className="mb-6">
                 <h4 className="text-sm font-medium text-foreground mb-2">Tech Stack:</h4>
@@ -286,15 +374,17 @@ export function ProjectsSection() {
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 bg-secondary text-secondary-foreground rounded-lg hover:bg-primary/20 hover:text-primary transition-colors"
-                >
-                  <Github className="w-4 h-4" />
-                  View Code
-                </Link>
+                {project.github && (
+                  <Link
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 bg-secondary text-secondary-foreground rounded-lg hover:bg-primary/20 hover:text-primary transition-colors"
+                  >
+                    <Github className="w-4 h-4" />
+                    View Code
+                  </Link>
+                )}
                 {project.demo && (
                   <Link
                     href={project.demo}

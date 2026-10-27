@@ -13,13 +13,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Warusha Shamalka | Computer Science Student',
-  description: 'Computer Science undergraduate and Full-Stack & Cloud-Native Developer. 3rd year student at University of Colombo School of Computing with GPA 3.76/4.0.',
-  keywords: ['Full-Stack Developer', 'Cloud-Native Developer', 'Computer Science', 'Web Developer', 'React', 'Next.js', 'Node.js'],
+  title: 'Warusha Shamalka | Aspiring DevOps Engineer',
+  description: 'Third-year Computer Science undergraduate at the University of Colombo School of Computing, building hands-on DevOps skills in Linux, Docker, CI/CD, and automation.',
+  keywords: ['Aspiring DevOps Engineer', 'DevOps Intern', 'Computer Science', 'Docker', 'CI/CD', 'Linux', 'GitHub Actions'],
   authors: [{ name: 'Warusha Shamalka' }],
   openGraph: {
-    title: 'Warusha Shamalka | Computer Science Student',
-    description: 'Computer Science undergraduate and Full-Stack & Cloud-Native Developer at University of Colombo School of Computing.',
+    title: 'Warusha Shamalka | Aspiring DevOps Engineer',
+    description: 'Third-year Computer Science undergraduate building hands-on DevOps skills at the University of Colombo School of Computing.',
     type: 'website',
   },
   icons: {
